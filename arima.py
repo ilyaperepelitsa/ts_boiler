@@ -34,14 +34,15 @@ data = data.set_index('Datetime')
 stepwise_model = auto_arima(data['Global_active_power'],
                            start_p=1, start_q=1,
                            max_p=50, max_q=50, m=12,
+                           max_order = 50,
                            start_P=0,
                            start_Q =0,
                            seasonal=True,
                            d=1, D=1,
                            trace=True,
-                           test = 'kpss',
+                           # test = 'kpss',
                            error_action='ignore',
                            suppress_warnings=True,
                            stepwise=False,
                            random = True,
-                           n_fits = 50)
+                           n_fits = 100)
