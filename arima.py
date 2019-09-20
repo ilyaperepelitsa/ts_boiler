@@ -34,7 +34,7 @@ data = data.set_index('Datetime')
 stepwise_model = auto_arima(data['Global_active_power'],
                            start_p=1, start_q=1,
                            max_p=50, max_q=50, m=12,
-                           max_order = 50,
+                           max_order = 100,
                            start_P=0,
                            start_Q =0,
                            seasonal=True,
