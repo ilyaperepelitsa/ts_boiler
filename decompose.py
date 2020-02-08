@@ -41,7 +41,7 @@ plt.show()
 
 
 import datetime
-Then you'll have, using datetime.timedelta:
+# Then you'll have, using datetime.timedelta:
 
 date_1 = datetime.datetime.strptime(start_date, "%m/%d/%y")
 
