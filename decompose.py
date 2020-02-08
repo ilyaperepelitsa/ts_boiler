@@ -17,7 +17,32 @@ rcParams['figure.figsize'] = 30, 10
 decomposition = sm.tsa.seasonal_decompose(data['Global_active_power'], model='additive')
 fig = decomposition.plot()
 dir(decomposition)
+
 decomposition.observed
 decomposition.trend.tail()
 decomposition.seasonal.tail()
 decomposition.resid.tail()
+
+
+
+
+
+
+cycle, trend = sm.tsa.filters.hpfilter(series, 50)
+
+from statsmodels.tsa.seasonal import STL
+
+
+
+result = STL(series).fit()
+chart = result.plot()
+plt.show()
+
+
+
+import datetime
+Then you'll have, using datetime.timedelta:
+
+date_1 = datetime.datetime.strptime(start_date, "%m/%d/%y")
+
+end_date = date_1 + datetime.timedelta(days=10)
